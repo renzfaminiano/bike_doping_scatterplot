@@ -99,12 +99,8 @@ let drawPoints = () => {
                    .style('left',(event.clientX+15)+'px')
                    .style('top',(event.clientY-15)+'px')
             console.log(new Date(d['Seconds']*1000).toISOString().substring(0))
-            if (d['Doping'] != ''){
-                    tooltip.text("Name: "+d['Name']+ " (" +
+            tooltip.text("Name: "+d['Name']+ " (" +
                     d['Nationality']+") Year: "+ d['Year']+ " Time: " + new Date(d['Seconds']*1000).toISOString().substring(14,19) +"\n" +d['Doping'])
-            } else {
-                    tooltip.text('None')
-            }
             document.querySelector('#tooltip').setAttribute('data-year',d['Year'])
        })
        .on('mouseout', ()=>{
